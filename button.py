@@ -62,7 +62,7 @@ class MyView(disnake.ui.View):
 
 @bot.event
 async def on_ready():
-    channel = bot.get_channel() # put channel ID in brackets
+    channel = bot.get_channel(settings['channel_id']) # put channel ID in brackets
     if channel is not None:
         await channel.send("Press the button below to submit your ID.", view=MyView()) # You can edit message text here
     else:
