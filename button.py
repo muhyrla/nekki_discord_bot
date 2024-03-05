@@ -62,11 +62,11 @@ class MyView(disnake.ui.View):
 
 @bot.event
 async def on_ready():
-    channel = bot.get_channel(1209811462093152289)
+    channel = bot.get_channel() # put channel ID in brackets
     if channel is not None:
-        await channel.send("Press the button below to submit your ID.", view=MyView())
+        await channel.send("Press the button below to submit your ID.", view=MyView()) # You can edit message text here
     else:
-        print(f"Канал с ID {1209811462093152289} не найден.")
+        pass
 
 
 bot.run(settings['token'])
